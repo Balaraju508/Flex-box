@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox</title>
+    <style>
+        * {
+	        margin: 0;
+	        padding: 0;
+	        box-sizing: border-box;
+        }
+    body {
+	    font-family: poppins;
+	    background: #88a9f0;
+    }
+    .form-box {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100vh;
+    }
+    .wrapper {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    background: #fff;
+	    padding: 20px;
+	    width: 800px;
+	    height: 500px;
+	    border-radius: 10px;
+	    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .img-area {
+	    flex: 1;
+	    padding: 20px;
+	    text-align: center;
+        width: 100px;
+    }
+    .img-area img {
+    	max-width: 100%;
+	    height: auto;
+    }
+    .form-area {
+	    flex: 1;
+	    padding: 20px;
+	    background-color: #fff;
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+    }
+    .form-area h3 {
+	    font-size: 24px;
+	    margin-bottom: 20px;
+    }
+    .single-form {
+	    margin-bottom: 20px;
+    }
+    input[type="text"], input[type="password"] {
+	    width: 100%;
+	    padding: 10px;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+    }
+    input[type="submit"] {
+	    background-color: #007BFF;
+	    color: #fff;
+	    padding: 10px 20px;
+	    border: none;
+	    border-radius: 5px;
+	    cursor: pointer;
+    }
+    @media (max-width: 768px) {
+	    .wrapper {
+	    	flex-direction: column;
+	    	text-align: center;
+	    	height: auto;
+		    width: auto;
+	    }
+	    .img-area, .form-area {
+	    	flex: none;
+    	}
+	    .img-area {
+	    	margin-bottom: 20px;
+	    }
+    }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <div class="wrapper">
+            <div class="img-area">
+                <img src="data:image/png;base64,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" alt="">
+            </div>
+            <div class="form-area">
+                <h3>Login Form</h3>
+                <form>
+                    <div class="single-form">
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="single-form">
+                        <input type="password" placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
